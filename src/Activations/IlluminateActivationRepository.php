@@ -120,7 +120,7 @@ class IlluminateActivationRepository implements ActivationRepositoryInterface
         }
 
         $activation->fill([
-            'completed'    => true,
+            'completed' => true,
             'completed_at' => Carbon::now(),
         ]);
 
@@ -138,7 +138,7 @@ class IlluminateActivationRepository implements ActivationRepositoryInterface
             ->createModel()
             ->newQuery()
             ->where('user_id', $user->getUserId())
-            ->where('completed', true)
+            ->where('completed', 'true')
             ->first();
 
         return $activation ?: false;
